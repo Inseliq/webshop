@@ -1,0 +1,362 @@
+@import url(../layout.css);
+
+:root {
+  --primary-color: #1e88e5;
+  --secondary-color: #f5f5f5;
+  --text-color: #333;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --button-hover: #1565c0;
+  --radius: 8px;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  height: 100%;
+
+  & .heading {
+    height: 30%;
+  }
+}
+
+.login-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 1.25rem;
+  color: var(--primary-color);
+  font-size: 1.75rem;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"],
+.login-container input[type="text"] {
+  padding: 0.75rem;
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius);
+  background-color: var(--input-bg);
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.login-container .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+
+  & a {
+    color: var(--primary-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--button-hover);
+    }
+  }
+}
+
+.login-container .actions label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+    & input {
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+    }
+}
+
+.login-container button {
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--radius);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: var(--button-hover);
+}
+
+.login-container .links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+
+  & a {
+    color: var(--primary-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--button-hover);
+    }
+  }
+}
+
+.login-container .links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.login-container .links a:hover {
+  color: var(--button-hover);
+}
+
+/* Canvas style */
+
+div.overview {
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s ease;
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  z-index: 5;
+}
+
+div.overview.open {
+  visibility: visible;
+  opacity: .4;
+}
+
+aside.dialog-window#canvas-fogot {
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px #0000001a;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  z-index: 10;
+
+  & #fgt-close-btn {
+    position: absolute;
+    background: none;
+    color: black;
+    top: 5px;
+    right: 15px;
+    font-size: 42px;
+  }
+
+  & h1 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.75rem;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  & input {
+    padding: 0.75rem;
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius);
+    background-color: var(--input-bg);
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+
+  & button {
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--radius);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--button-hover);
+    }
+  }
+
+  & button:disabled {
+    opacity: .5;
+    cursor: default;
+
+    &:hover {
+      background-color: var(--primary-color);
+      opacity: .5;
+    }
+  }
+}
+
+aside.dialog-window#canvas-fogot.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+aside.modal-window#canvas-help {
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px #0000001a;
+  width: 100%;
+  max-width: 800px;
+  width: 50%;
+  min-width: 300px;
+  min-height: 300px;
+  height: 75%;
+  max-height: 800px;
+  overflow-y: auto;
+  text-align: center;
+  z-index: 10;
+
+  & #help-close-btn {
+    position: absolute;
+    border: none;
+    background: none;
+    color: black;
+    top: 5px;
+    right: 15px;
+    font-size: 42px;
+    cursor: pointer;
+  }
+
+  & h1 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.75rem;
+  }
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    overflow-y: auto;
+  }
+}
+
+aside.modal-window#canvas-help.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+aside.modal-window#canvas-privacy_policy {
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s ease;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px #0000001a;
+  width: 100%;
+  max-width: 800px;
+  width: 50%;
+  min-width: 300px;
+  min-height: 300px;
+  height: 75%;
+  max-height: 800px;
+  text-align: center;
+  z-index: 10;
+
+  & #privacy_policy-close-btn {
+    position: absolute;
+    border: none;
+    background: none;
+    color: black;
+    top: 5px;
+    right: 15px;
+    font-size: 42px;
+    cursor: pointer;
+  }
+
+  & h1 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.75rem;
+  }
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    overflow: auto;
+  }
+}
+
+aside.modal-window#canvas-privacy_policy.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+#register {
+  & header {
+    height: 100%;
+
+    & .heading {
+      height: 10%;
+    }
+  }
+
+  & .login-container {
+    top: 45%;
+  }
+
+  & .login-container .actions label {
+    font-size: 13px;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}

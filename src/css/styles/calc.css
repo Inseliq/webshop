@@ -1,0 +1,88 @@
+@import url(../layout.css);
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+header {
+  height: 30vh;
+
+  & .heading {
+    height: 30%;
+  }
+}
+
+.calculator {
+  box-shadow: 0px 0px 10px 1px #00000090;
+  width: 360px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: whitesmoke;
+  gap: 20px;
+  border-radius: 15px;
+
+  & input.display {
+    display: flex;
+    width: 100%;
+    font-size: 32px;
+    padding: 10px;
+    font-weight: 400;
+    background: white;
+    box-shadow: 0px 0px 5px 0.1px #00000090;
+    border: none;
+    border-radius: 15px;
+  }
+
+  & .buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+
+    & div {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+
+      & button {
+        min-width: 72px;
+        min-height: 72px;
+        font-size: 32px;
+        padding: 10px;
+        font-weight: 400;
+        background: white;
+        border: none;
+        box-shadow: 0px 0px 5px 0.1px #00000090;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: .3s ease;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+  }
+}
+
+.clear, .operation {
+  color: blue;
+}
+
+.equal {
+  color: white;
+  background: blue !important;
+  height: 100%;
+}

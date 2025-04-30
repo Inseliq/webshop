@@ -1,0 +1,76 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/styles/calc.css">
+  <script src="../../js/app/appCalculator.js" defer></script>
+  <title>Калькулятор</title>
+</head>
+<body>
+  <header>
+    <nav class="navigation">
+      <a href="../../index.html">Главная</a>
+      <a href="">Каталог</a>
+      <a href="">Акции</a>
+      <a href="./calculator.html">Калькулятор</a>
+      <a href="../profile/profile.html">Профиль</a>
+    </nav>
+    <section class="heading">
+      <h1>Калькулятор</h1>
+    </section>
+  </header>
+  <main class="calculator">
+    <input type="text" class="display" id="display" disabled />
+    <div class="buttons">
+      <div class="grid-col-1">
+        <button class="clear" id="clear">C</button>
+        <button data-num="7">7</button>
+        <button data-num="4">4</button>
+        <button data-num="1">1</button>
+        <button class="percent" id="percent">%</button>
+      </div>
+      <div class="grid-col-2">
+        <button class="operation" data-op="/">÷</button>
+        <button data-num="8">8</button>
+        <button data-num="5">5</button>
+        <button data-num="2">2</button>
+        <button data-num="0">0</button>
+      </div>
+      <div class="grid-col-3">
+        <button class="operation" data-op="*">×</button>
+        <button data-num="9">9</button>
+        <button data-num="6">6</button>
+        <button data-num="3">3</button>
+        <button data-num=".">.</button>
+      </div>
+      <div class="grid-col-4">
+        <button class="clear" id="clear-element">CE</button>
+        <button class="operation" data-op="-">-</button>
+        <button class="operation" data-op="+">+</button>
+        <button class="equal" id="equals">=</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+      <div id="information_main" class="information">
+        <article>
+          <h3>О нас</h3>
+          <p>Мы — современный интернет-магазин с лучшими товарами.</p>
+        </article>
+        <nav>
+          <h3>Ссылки</h3>
+          <a href="#">Главная</a>
+          <a href="#product_main">Каталог</a>
+          <a href="#stock_main">Акции</a>
+          <a href="#information_main">Контакты</a>
+        </nav>
+        <address>
+          <h3>Контакты</h3>
+          <p>Email: info@example.com</p>
+          <p>Телефон: +7 (123) 456-78-90</p>
+        </address>
+      </div>
+      <p>© 2025 Интернет-магазин. Все права защищены.</p>
+    </footer>
+</body>
+</html>

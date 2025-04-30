@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <link rel="stylesheet" href="../../../css/styles/sign.css">
+  <script src="../../../js/management/toIndex.js" defer></script>
+  <script src="../../../js/management/fgtPassword.js" defer></script>
+  <script src="../../../js/management/helpLogin.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navigation">
+      <a href="../../../index.html">Главная</a>
+      <a href="">Каталог</a>
+      <a href="">Акции</a>
+      <a href="../../function/calculator.html">Калькулятор</a>
+      <a href="./register.html">Регистрация</a>
+    </nav>
+    <section class="heading">
+      <h1>Страница входа в интернет-магазин</h1>
+    </section>
+  </header>
+  <main class="login-container">
+    <h1>Вход</h1>
+    <form id="login-form">
+      <input type="email" name="email" placeholder="Эл. Почта" required>
+      <input type="password" name="password" placeholder="Пароль" required>
+      <div class="actions">
+        <label><input type="checkbox" name="remember"> Запомнить меня</label>
+        <a id="fgt-open-btn">Забыли пароль?</a>
+      </div>
+      <button type="submit">Войти</button>
+    </form>
+    <div class="links">
+      <a href="./register.html">Создать аккаунт</a>
+      <a id="help-open-btn">Помощь</a>
+    </div>
+  </main>
+  <footer>
+    <div class="information">
+      <article>
+        <h3>О нас</h3>
+        <p>Мы — современный интернет-магазин с лучшими товарами.</p>
+      </article>
+      <nav>
+        <h3>Ссылки</h3>
+        <a href="../../../index.html">Главная</a>
+        <a href="../../../index.html#product_main">Каталог</a>
+        <a href="../../../index.html#stock_main">Акции</a>
+        <a href="../../../index.html#information_main">Контакты</a>
+      </nav>
+      <address>
+        <h3>Контакты</h3>
+        <p>Email: info@example.com</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+      </address>
+    </div>
+    <p>© 2025 Интернет-магазин. Все права защищены.</p>
+  </footer>
+  <div class="overview" id="overview"></div>
+  <aside class="dialog-window" id="canvas-fogot">
+    <button id="fgt-close-btn">×</button>
+    <h1>Восстановление пароля</h1>
+    <form id="fogot-password">
+      <input type="email" name="email-fgt" id="email-fgt" placeholder="Эл. Почта" required>
+      <input type="text" name="code-verify" id="code-verify" placeholder="Код из письма" maxlength="6" style="display: none;">
+      <button type="submit" data-name="fgt-pass"></button>
+    </form>
+  </aside>
+  <aside class="modal-window" id="canvas-help">
+    <button id="help-close-btn">×</button>
+    <h1>Помощь</h1>
+    <div class="help-content">
+      <p><b>Как войти:</b></p>
+      <ol>
+        <li>Откройте страницу <b>Вход</b> в нашем интернет-магазине.</li>
+        <li>В поле <b>Эл. Почта</b> введите адрес электронной почты, который вы использовали при регистрации.</li>
+        <li>В поле <b>Пароль</b> введите свой пароль. Если вы ранее нажимали «Запомнить меня», эти поля могут быть заполнены автоматически.</li>
+        <li>При необходимости установите флажок <b>Запомнить меня</b>, чтобы не вводить данные при следующих посещениях.</li>
+        <li>Нажмите кнопку <b>Войти</b>. Если данные введены верно, вы будете перенаправлены в личный кабинет.</li>
+      </ol>
+      <p><b>Как зарегистрироваться:</b></p>
+      <ol>
+        <li>Нажмите ссылку <b>Создать аккаунт</b> внизу формы входа.</li>
+        <li>Заполните все обязательные поля формы регистрации: <b>Имя</b>, <b>Эл. Почта</b>, <b>Пароль</b> и другие ваши данные.</li>
+        <li>Прочтите и подтвердите согласие с условиями использования и политикой конфиденциальности, если это требуется.</li>
+        <li>Нажмите кнопку <b>Зарегистрироваться</b>. Мы вышлем вам подтверждающее письмо.</li>
+        <li>Перейдите по ссылке в письме для активации аккаунта и завершения регистрации.</li>
+      </ol>
+      <p><b>Как восстановить пароль:</b></p>
+      <ol>
+        <li>Нажмите кнопку <b>Забыли пароль?</b> рядом с формой входа.</li>
+        <li>В появившемся окне введите свою <b>Эл. Почту</b> и нажмите <b>Отправить</b>.</li>
+        <li>Проверьте почту: вы получите письмо с кодом восстановления из 6 цифр.</li>
+        <li>В поле <b>Код из письма</b> введите полученный код. Нажмите <b>Сбросить пароль</b>, когда код введён полностью.</li>
+        <li>После успешного сброса вы будете перенаправлены на страницу установки нового пароля.</li>
+      </ol>
+    </div>
+  </aside>
+</body>
+</html>
